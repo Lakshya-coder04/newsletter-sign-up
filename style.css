@@ -27,7 +27,7 @@ body {
   display: flex;
   justify-content: space-between;
   border-radius: 20px;
-  margin: 10px 0;
+  margin: 50px auto;
 }
 
 .left-column {
@@ -84,19 +84,26 @@ label {
   font-family: 'Roboto', sans-serif;
   padding: 10px 10px;
   margin-bottom: 10px;
-  outline: none;
-  border: 2px solid var(--Grey);
+  outline: 2px solid var(--Grey);
+  border: none;
   border-radius: 8px;
 }
 
 .submit {
   font-family: 'Roboto', sans-serif;
-  padding: 10px;
+  padding: 20px;
   color: var(--White);
   background-color: var(--Dark-Slate-Grey);
+  border: none;
   border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
+.submit:hover {
+  transition: 0.3s all;
+  background-color: var(--Charcoal-Grey);
+}
+
 .right-column {
   flex: 1;
 }
@@ -154,15 +161,6 @@ label {
   cursor: pointer;
 }
 
-/* Style for the subscribe button */
-.subscribe-button {
-  background-color: #4caf50; /* Green color for the subscribe button */
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
 #email-placeholder {
   font-weight: 700;
 }
@@ -172,4 +170,116 @@ label {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background-color: var(--White);
+  }
+  .container {
+    width: 375px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    border-radius: 20px;
+    margin-top: 10px auto;
+  }
+  .right-column {
+    display: flex;
+  }
+  .right-column img {
+    max-width: 100%;
+    height: auto;
+    padding: 0;
+  }
+
+  .left-column {
+    flex: 1;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 30px;
+  }
+  .left-column h1 {
+    font-size: 40px;
+  }
+
+  ul {
+    margin-bottom: 30px;
+  }
+
+  li {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: left;
+    gap: 12px;
+    margin: 10px 0;
+  }
+
+  .left-column p {
+    line-height: 20px;
+    margin: 10px 0;
+    font-size: 14px;
+  }
+
+  .left-column form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  form label {
+    font-size: 12px;
+    font-weight: 700;
+  }
+  /* modal  */
+  .modal-overlay {
+    visibility: hidden;
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+
+  .modal {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .modal img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .modal h1 {
+    font-size: 40px;
+  }
+
+  .modal p {
+    font-size: 14px;
+    margin: 10px 0;
+  }
+  /* Style for the dismiss button */
+  .dismiss-button {
+    background-color: var(--Dark-Slate-Grey); /* Red color for the button */
+    color: var(--White);
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 }
